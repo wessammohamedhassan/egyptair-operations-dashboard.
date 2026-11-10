@@ -1,33 +1,51 @@
-# AERO COMMAND — Supabase-backed executive dashboard
+# AERO COMMAND — EGYPTAIR Operations Dashboard
 
-This is an English-language, single-page starter application adapted from the supplied EGYPTAIR dashboard prototype.
+A lightweight, single-page operations workspace connected to Supabase and deployed on Vercel.
 
-## Supabase project
-- Project: `EGYPTAIR-Operations-Dashboard`
-- Project ref: `xuvkbyniszzetkebqfmo`
+## Live application
+
+- Production: https://egyptair-operations-dashboard.vercel.app
+- GitHub: https://github.com/wessammohamedhassan/egyptair-operations-dashboard.
+
+## Features
+
+- Supabase email/password authentication
+- Owner-scoped data access through PostgreSQL row-level security
+- Executive overview for departments, work-order summaries, safety risks and management decisions
+- Department performance and budget overview
+- Add safety-risk and management-decision records
+- Update management-decision status
+- Load clearly labelled sample/demo records
+
+## Technology
+
+- HTML, CSS and browser JavaScript
+- Supabase JavaScript client v2 (CDN)
+- Supabase Auth and PostgreSQL
+- Vercel static hosting with Git-based production deployment
+
+## Supabase configuration
+
+The frontend uses the project's public publishable key only. It does not contain a service-role key or server secret.
+
+- Supabase project ref: `xuvkbyniszzetkebqfmo`
 - Region: Frankfurt (`eu-central-1`)
-- URL: `https://xuvkbyniszzetkebqfmo.supabase.co`
-- Browser configuration uses a Supabase publishable key. No service-role or secret key is included.
+- API URL: `https://xuvkbyniszzetkebqfmo.supabase.co`
 
-## Included
-- Email/password sign-up and sign-in via Supabase Auth
-- Owner-scoped PostgreSQL tables protected by row-level security
-- Department directory, work-order summary, risk register, decisions and budget rollups
-- Add risk and decision records; update decision status
-- CSV export for department financial/headcount summary
-- Clearly labelled prototype sample-data loader
+Set the Supabase Auth Site URL and allowed redirect URLs to the production domain above. Create an account with an email address you can verify; if email confirmation is enabled, confirm it before signing in.
 
 ## Run locally
-1. Serve this folder from a local web server, for example `python -m http.server 8000`.
-2. Open `http://localhost:8000`.
-3. Create an account using an email address you can verify.
-4. If email confirmation is enabled, confirm the message and sign in.
-5. Select **Load prototype sample data** to explore the dashboard with illustrative records.
 
-The Supabase database migration has already been applied to the project. The application uses the Supabase JavaScript v2 CDN and the project's publishable key.
+Serve the repository root with a local web server, for example:
+
+```bash
+python -m http.server 8000
+```
+
+Then open http://localhost:8000.
 
 ## Important limitations
-- Dashboard figures and sample records are simulated/illustrative, not actual EGYPTAIR operational data.
-- Maintenance, HR, inventory, safety, finance and other operational source systems have not been connected. No live airline records have been imported.
-- This repository does not constitute a live hosted website. Deploy the folder to a static host and configure Supabase Auth site and redirect URLs for that host.
-- Before production use, define organization roles and permissions, review data governance, connect approved source systems, configure backups/monitoring, and complete security and operational acceptance testing.
+
+- Dashboard numbers and sample records are illustrative/demo data, not verified EGYPTAIR operational information.
+- No live airline systems have been integrated. Maintenance, HR, inventory, safety and finance data are not being imported from operational source systems.
+- The dashboard is an operational prototype, not a certified airline operations, safety or maintenance system. Complete security, access-control, data-governance and operational acceptance reviews before any real-world deployment.
